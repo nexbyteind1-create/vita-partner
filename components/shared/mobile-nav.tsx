@@ -13,10 +13,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import type { PortalConfig } from "./portal-config";
+import { PORTAL_CONFIG } from "./portal-config";
+import type { PortalType } from "@/lib/auth/types";
 
-export function MobileNav({ config }: { config: PortalConfig }) {
+export function MobileNav({ portalType }: { portalType: PortalType }) {
   const [open, setOpen] = useState(false);
+  const config = PORTAL_CONFIG[portalType];
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>

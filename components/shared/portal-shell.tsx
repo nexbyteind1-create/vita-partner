@@ -64,7 +64,7 @@ export function PortalShell({
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex h-16 items-center justify-between gap-2 border-b bg-background px-3 md:px-6">
           <div className="flex min-w-0 items-center gap-1 md:hidden">
-            <MobileNav config={config} />
+            <MobileNav portalType={portalType} />
             <HeartPulse className="h-5 w-5 shrink-0 text-primary" />
             <span className="truncate text-sm font-semibold">{config.label}</span>
           </div>
