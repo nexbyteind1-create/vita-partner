@@ -5,6 +5,7 @@ import { logoutAction } from "@/lib/auth/session";
 import { PORTAL_CONFIG } from "./portal-config";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { MobileNav } from "./mobile-nav";
 
 export function PortalShell({
   portalType,
@@ -61,16 +62,17 @@ export function PortalShell({
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="flex h-16 items-center justify-between border-b bg-background px-4 md:px-6">
-          <div className="md:hidden flex items-center gap-2">
-            <HeartPulse className="h-5 w-5 text-primary" />
-            <span className="text-sm font-semibold">{config.label}</span>
+        <header className="flex h-16 items-center justify-between gap-2 border-b bg-background px-3 md:px-6">
+          <div className="flex min-w-0 items-center gap-1 md:hidden">
+            <MobileNav config={config} />
+            <HeartPulse className="h-5 w-5 shrink-0 text-primary" />
+            <span className="truncate text-sm font-semibold">{config.label}</span>
           </div>
           <p className="hidden text-sm text-muted-foreground md:block">{config.tagline}</p>
-          <div className="flex items-center gap-3">
-            <div className="text-right leading-tight">
-              <p className="text-sm font-medium">{session.name}</p>
-              <p className="text-xs text-muted-foreground">{session.orgName}</p>
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="min-w-0 text-right leading-tight">
+              <p className="max-w-[110px] truncate text-sm font-medium sm:max-w-none">{session.name}</p>
+              <p className="hidden text-xs text-muted-foreground sm:block">{session.orgName}</p>
             </div>
             <form action={logoutAction.bind(null, portalType)}>
               <Button variant="ghost" size="icon" type="submit" title="Log out">

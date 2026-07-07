@@ -88,8 +88,8 @@ export function TestFormDialog({ test }: { test?: Test }) {
           <DialogDescription>Configure test information, pricing and preparation instructions.</DialogDescription>
         </DialogHeader>
 
-        <div className="grid grid-cols-2 gap-3">
-          <div className="col-span-2 space-y-1.5">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="sm:col-span-2 space-y-1.5">
             <Label>Test Name *</Label>
             <Input value={name} onChange={(e) => setName(e.target.value)} />
           </div>
@@ -136,7 +136,7 @@ export function TestFormDialog({ test }: { test?: Test }) {
             <Label>Offer Price</Label>
             <Input type="number" value={offerPrice} onChange={(e) => setOfferPrice(Number(e.target.value))} />
           </div>
-          <div className="col-span-2 flex items-center gap-2">
+          <div className="sm:col-span-2 flex items-center gap-2">
             <input
               type="checkbox"
               id="homeCollection"
@@ -146,11 +146,11 @@ export function TestFormDialog({ test }: { test?: Test }) {
             />
             <Label htmlFor="homeCollection">Home Collection Available</Label>
           </div>
-          <div className="col-span-2 space-y-1.5">
+          <div className="sm:col-span-2 space-y-1.5">
             <Label>Description</Label>
             <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={2} />
           </div>
-          <div className="col-span-2 space-y-1.5">
+          <div className="sm:col-span-2 space-y-1.5">
             <Label>Preparation Instructions</Label>
             <Textarea value={preparationInstructions} onChange={(e) => setPreparationInstructions(e.target.value)} rows={2} />
           </div>

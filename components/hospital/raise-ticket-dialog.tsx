@@ -84,7 +84,7 @@ export function RaiseTicketDialog() {
           <Label>Subject</Label>
           <Input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Brief summary of the issue" />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label>Category</Label>
             <Select value={category} onValueChange={(v) => setCategory(v as SupportTicketCategory)}>
@@ -120,7 +120,7 @@ export function RaiseTicketDialog() {
           <Label>Description</Label>
           <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <div className="space-y-1.5">
             <Label>Contact Number</Label>
             <Input value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} />
